@@ -1,10 +1,10 @@
 
 'use strict';
 
-const _ = require('../lib/lodash');
-const utils = require('../lib/utils');
-const should = require('should');
-const factory = require('@rdfjs/data-model');
+import _ from '../lib/lodash.js';
+import utils from '../lib/utils.js';
+import should from 'should';
+import factory from '@rdfjs/data-model';
 
 function stripTermSerializedValue(quads) {
   const _quads = _.isArray(quads) ? quads : [quads];
@@ -16,7 +16,7 @@ function stripTermSerializedValue(quads) {
   return _.isArray(quads) ? _quads : _quads[0];
 }
 
-module.exports = () => {
+export default () => {
 
   describe('RdfStore.prototype.match()', () => {
 

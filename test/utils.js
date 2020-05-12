@@ -1,9 +1,9 @@
 
 'use strict';
 
-const n3 = require('n3');
-const url = require('url');
-const http = require('http');
+import n3 from 'n3';
+import url from 'url';
+import http from 'http';
 
 async function serializeQuads(quads, format) {
   return new Promise((resolve, reject) => {
@@ -16,8 +16,6 @@ async function serializeQuads(quads, format) {
   });
 }
 
-module.exports.serializeQuads = serializeQuads;
-
 async function deserializeQuads(data, format) {
   return new Promise((resolve, reject) => {
     const parser = n3.Parser({ format });
@@ -29,8 +27,6 @@ async function deserializeQuads(data, format) {
     });
   });
 }
-
-module.exports.deserializeQuads = deserializeQuads;
 
 async function get(targetUrl, acceptedFormat) {
   return new Promise((resolve, reject) => {
@@ -57,14 +53,10 @@ async function get(targetUrl, acceptedFormat) {
   });
 }
 
-module.exports.get = get;
-
 async function getQuads(targetUrl) {
   const [payload, format] = await get(targetUrl);
   return deserializeQuads(payload, format);
 }
-
-module.exports.getQuads = getQuads;
 
 async function postQuads(targetUrl, quads, format) {
   if (!format) format = 'application/trig';
@@ -88,4 +80,4 @@ async function postQuads(targetUrl, quads, format) {
   });
 }
 
-module.exports.postQuads = postQuads;
+export { serializeQuads, deserializeQuads, get, getQuads, postQuads };

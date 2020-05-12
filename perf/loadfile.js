@@ -1,17 +1,17 @@
 
 'use strict';
 
-const n3 = require('n3');
-const fs = require('fs-extra');
-const os = require('os');
-const path = require('path');
-const utils = require('../lib/utils');
-const Promise = require('bluebird');
-const shortid = require('shortid');
-const RdfStore = require('..').RdfStore;
-const leveldown = require('leveldown');
-const dataFactory = require('n3').DataFactory;
-const childProcess = require('child_process');
+import n3 from 'n3';
+import fs from 'fs-extra';
+import os from 'os';
+import path from 'path';
+import utils from '../lib/utils.js';
+import Promise from 'bluebird';
+import shortid from 'shortid';
+import { RdfStore } from '..';
+import leveldown from 'leveldown';
+import { DataFactory as dataFactory } from 'n3';
+import childProcess from 'child_process';
 
 function du(absPath) {
   return new Promise((resolve, reject) => {

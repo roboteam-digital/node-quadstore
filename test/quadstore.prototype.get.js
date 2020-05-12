@@ -1,10 +1,10 @@
 
 'use strict';
 
-const _ = require('../lib/lodash');
-const should = require('should');
+import _ from '../lib/lodash.js';
+import should from 'should';
 
-module.exports = () => {
+export default () => {
 
   describe('QuadStore.prototype.get()', () => {
 

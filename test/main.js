@@ -1,15 +1,15 @@
 
 'use strict';
 
-const os = require('os');
-const fs = require('fs-extra');
-const util = require('util');
-const path = require('path');
-const nanoid = require('nanoid');
-const memdown = require('memdown');
-const leveldown = require('leveldown');
-const rdfStoreSuite = require('./rdfstore');
-const quadStoreSuite = require('./quadstore');
+import os from 'os';
+import fs from 'fs-extra';
+import util from 'util';
+import path from 'path';
+import nanoid from 'nanoid';
+import memdown from 'memdown';
+import leveldown from 'leveldown';
+import rdfStoreSuite from './rdfstore.js';
+import quadStoreSuite from './quadstore.js';
 
 const remove = util.promisify(fs.remove);
 

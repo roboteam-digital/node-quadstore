@@ -3,10 +3,16 @@
 
 'use strict';
 
-const utils = require('../lib/utils');
-const RdfStore = require('..').RdfStore;
+import utils from '../lib/utils.js';
+import RdfStore from '../lib/rdfstore.js';
 
-module.exports = () => {
+import rdfstore_prototype_match         from './rdfstore.prototype.match.js'
+import rdfstore_prototype_del           from './rdfstore.prototype.del.js'
+import rdfstore_prototype_remove        from './rdfstore.prototype.remove.js'
+import rdfstore_prototype_import        from './rdfstore.prototype.import.js'
+import rdfstore_prototype_removematches from './rdfstore.prototype.removematches.js'
+
+export default () => {
 
   describe('RdfStore', () => {
 
@@ -19,11 +25,17 @@ module.exports = () => {
       await this.store.close();
     });
 
-    require('./rdfstore.prototype.match')();
-    require('./rdfstore.prototype.del')();
-    require('./rdfstore.prototype.remove')();
-    require('./rdfstore.prototype.import')();
-    require('./rdfstore.prototype.removematches')();
+    rdfstore_prototype_match()
+    rdfstore_prototype_del()
+    rdfstore_prototype_remove()
+    rdfstore_prototype_import()
+    rdfstore_prototype_removematches()
+
+    // require('./rdfstore.prototype.match')();
+    // require('./rdfstore.prototype.del')();
+    // require('./rdfstore.prototype.remove')();
+    // require('./rdfstore.prototype.import')();
+    // require('./rdfstore.prototype.removematches')();
 
   });
 };

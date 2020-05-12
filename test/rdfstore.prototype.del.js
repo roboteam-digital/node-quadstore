@@ -1,12 +1,16 @@
 
 'use strict';
 
-const _ = require('../lib/lodash');
-const utils = require('../lib/utils');
-const should = require('should');
-const factory = require('n3').DataFactory;
+import _ from '../lib/lodash.js';
+import utils from '../lib/utils.js';
+import should from 'should';
+// import DataFactory from 'n3';
+// const factory = DataFactory
+import * as N3 from 'n3';
+const factory = N3.default.DataFactory
 
-module.exports = () => {
+
+export default () => {
 
   describe('RdfStore.prototype.del()', () => {
 

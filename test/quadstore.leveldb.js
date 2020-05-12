@@ -1,8 +1,8 @@
 
 'use strict';
 
-const utils = require('../lib/utils');
-const should = require('should');
+import utils from '../lib/utils.js';
+import should from 'should';
 
 function quadToPartialKey(index, store, quad) {
   let key = [index];
@@ -18,7 +18,7 @@ function quadToPartialKey(index, store, quad) {
   return key.join(store.separator);
 }
 
-module.exports = () => {
+export default () => {
 
   describe('Quad serialization', () => {
 
